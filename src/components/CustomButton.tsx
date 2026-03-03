@@ -1,4 +1,4 @@
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, Touchable } from "react-native";
 import React from "react";
 import { ButtonProps } from "@/types/type";
 
@@ -33,3 +33,30 @@ const getTextVariantStyle = ( variant: ButtonProps["textVariant"] ) => {
       return "text-gray-500";
   }
 }
+
+  const CustomButton = ({
+    onPress,
+    title,
+    bgVariant = "primary",
+    textVariant = "primary",
+    IconLeft,
+    IconRight,
+    className,
+    ...props
+  }: ButtonProps & { title: string, textVariant: String, IconLeft: any, IconRight: any }) => {
+    return (
+      <TouchableOpacity
+        onPress={onPress}
+        className={`${getBgVariantStyle(bgVariant)} px-4 py-2 rounded ${className}`}
+        {...props}
+      >
+        <Text className={`${getTextVariantStyle(textVariant)} text-center`}>
+          {IconLeft && <IconLeft />}
+          {title}
+          {IconRight && <IconRight />}
+        </Text>
+      </TouchableOpacity>
+    );
+  }
+
+  export default CustomButton;
