@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import * as Linking from "expo-linking";
 import * as SecureStore from "expo-secure-store";
 
 import { apiFetch } from "@/lib/api";
 
+=======
+import * as SecureStore from "expo-secure-store";
+
+>>>>>>> 01c8145 (Atualização Judify Mobile)
 const ACCESS_KEY = "judify_access_token";
 const REFRESH_KEY = "judify_refresh_token";
 
@@ -35,6 +40,7 @@ export async function clearTokens(): Promise<void> {
   await SecureStore.deleteItemAsync(ACCESS_KEY);
   await SecureStore.deleteItemAsync(REFRESH_KEY);
 }
+<<<<<<< HEAD
 
 
 export const tokenCahe = {
@@ -103,3 +109,5 @@ export const googleOAuth = async (startOAuthFlow: any) => {
         }
     }
 };
+=======
+>>>>>>> 01c8145 (Atualização Judify Mobile)
